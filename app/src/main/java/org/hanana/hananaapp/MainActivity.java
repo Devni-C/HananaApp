@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void hello(){
-        // hello world
+        // hello world massina
 
 
 
