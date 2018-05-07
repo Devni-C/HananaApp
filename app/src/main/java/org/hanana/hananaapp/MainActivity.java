@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
 <<<<<<< HEAD
     public void hello(){
-        // hello
+
 =======
     private void hello(){
 
