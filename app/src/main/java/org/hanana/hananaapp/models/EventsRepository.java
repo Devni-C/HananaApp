@@ -8,8 +8,19 @@ import java.util.Date;
 public class EventsRepository {
 
     private ArrayList<Event> mEvents;
+    public static EventsRepository sEventsRepository;
 
-    public EventsRepository(Context context) {
+    // constructor
+
+    // mehod to get a an EventsRepository
+    public static EventsRepository getInstance(Context context){
+        if(sEventsRepository == null)
+            sEventsRepository = new EventsRepository(context);
+
+        return sEventsRepository;
+    }
+
+    private EventsRepository(Context context) {
 
         mEvents = new ArrayList<>();
         for (int i = 0; i < 100 ; ++i){
@@ -24,4 +35,7 @@ public class EventsRepository {
     }
 
     // method to get all events
+    public ArrayList<Event> getAllEvents(){
+        return mEvents;
+    }
 }
