@@ -10,8 +10,9 @@ public class User {
     private String mMobileNumber;
 
     // constructor
-    public User(long id) {
+    public User(long id, String username) {
         mId = id;
+        mUsername = username;
     }
 
     public long getId() {
