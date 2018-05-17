@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HananaApp</string>
+    <string name="text">Username</string>
 </resources>
