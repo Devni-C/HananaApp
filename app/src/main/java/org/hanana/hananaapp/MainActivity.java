@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     {
         if(v.getId()==R.id.bsignIn)
 
-            EditText a = (EditText)findViewById(R.id.lusername);
+            EditText a = (EditText)findViewById(R.id.Lusername);
 
             Intent i = new Intent(MainActivity.this, EventsActivity.class);
             i.putExtra(i)
