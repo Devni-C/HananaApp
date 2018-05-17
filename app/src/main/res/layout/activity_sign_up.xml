@@ -15,13 +15,13 @@
         tools:layout_editor_absoluteY="54dp" />
 
     <EditText
-        android:id="@+id/lusername"
+        android:id="@+id/Lusername"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="41dp"
         android:ems="10"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="86dp" />
+        tools:layout_editor_absoluteY="91dp" />
 
     <TextView
         android:id="@+id/textView7"

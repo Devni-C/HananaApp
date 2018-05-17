@@ -1,5 +1,6 @@
 package org.hanana.hananaapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,15 +19,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onButtonClick(View v)
-    {
-        if(v.getId()==R.id.bsignIn)
 
-            EditText a = (EditText)findViewById(R.id.Lusername);
-
-            Intent i = new Intent(MainActivity.this, EventsActivity.class);
-            i.putExtra(i)
-            startActivity(i);
-
-    }
 }
