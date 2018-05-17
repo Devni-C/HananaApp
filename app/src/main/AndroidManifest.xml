@@ -16,8 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< Updated upstream
         <activity android:name=".SignUpActivity" />
         <activity android:name=".EventsActivity"></activity>
+=======
+>>>>>>> Stashed changes
     </application>
 
 </manifest>

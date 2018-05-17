@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">HananaApp</string>
     <string name="text">Username</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="venue">Venue</string>
+    <string name="time">Time</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="rules">I agree to the terms and conditions</string>
 </resources>
