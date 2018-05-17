@@ -8,7 +8,7 @@ import android.widget.DatePicker;
 
 import java.util.Calendar;
 
-public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 //        DatePickerDialog dateSettings = new DatePickerDialog(getActivity());
