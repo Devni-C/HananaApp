@@ -17,12 +17,14 @@ public class SignUpActivity extends AppCompatActivity {
     public void onButtonClick(View v)
     {
         if(v.getId()==R.id.bsignIn)
+        {
 
-            EditText a = (EditText)findViewById(R.id.lusername);
+            EditText a = (EditText) findViewById(R.id.Lusername);
+            String st = a.getText().toString();
 
-        Intent i = new Intent(MainActivity.this, EventsActivity.class);
-        i.putExtra(i)
-        startActivity(i);
-
+            Intent i = new Intent(this, EventsActivity.class);
+            i.putExtra("username",st);
+            startActivity(i);
+        }
     }
 }
