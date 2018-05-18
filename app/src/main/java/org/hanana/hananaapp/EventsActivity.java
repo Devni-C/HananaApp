@@ -8,7 +8,7 @@ public class EventsActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return null;
+        return new EventsFragment();
     }
 
 }
