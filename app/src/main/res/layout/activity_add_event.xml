@@ -38,7 +38,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="36dp"
             android:text="@string/date"
-            app:layout_constraintEnd_toStartOf="@+id/date"
+            app:layout_constraintEnd_toStartOf="@+id/selectDate"
             app:layout_constraintHorizontal_bias="0.37"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -64,7 +64,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="44dp"
             android:text="@string/time"
-            app:layout_constraintEnd_toStartOf="@+id/time"
+            app:layout_constraintEnd_toStartOf="@+id/selectTime"
             app:layout_constraintHorizontal_bias="0.387"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -125,7 +125,7 @@
             android:ems="10"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/time" />
+            app:layout_constraintTop_toBottomOf="@+id/selectTime" />
 
         <EditText
             android:id="@+id/editText10"
@@ -142,22 +142,26 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/date"
+            android:id="@+id/selectDate"
             android:layout_width="217dp"
             android:layout_height="38dp"
             android:layout_marginEnd="40dp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/editText3"
+            android:onClick="showDatePickerDialog"
+            android:text="Select the Date"/>
 
         <Button
-            android:id="@+id/time"
+            android:id="@+id/selectTime"
             android:layout_width="214dp"
             android:layout_height="39dp"
             android:layout_marginEnd="52dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date" />
+            app:layout_constraintTop_toBottomOf="@+id/selectDate"
+            android:onClick="showTimePickerDialog"
+            android:text="Select the Time"/>
 
         <CheckBox
             android:id="@+id/checkBox"
