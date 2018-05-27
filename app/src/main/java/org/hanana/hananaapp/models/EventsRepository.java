@@ -30,6 +30,7 @@ public class EventsRepository {
             event.setLatitude(0.0f);
             event.setLongitude(0.0f);
             event.setVenue("Venue " + i);
+            mEvents.add(event);
         }
 
     }
