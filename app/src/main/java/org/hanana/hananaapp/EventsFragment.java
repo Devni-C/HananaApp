@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import org.hanana.hananaapp.models.Event;
 import org.hanana.hananaapp.models.EventsRepository;
@@ -45,8 +46,24 @@ public class EventsFragment extends Fragment {
 
 
     private class EventHolder extends RecyclerView.ViewHolder{
+        // ui instances
+        private TextView mTitleTextView;
+        private TextView mDateTextView;
+        // event instance
+        private Event mEvent;
+
         public EventHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_event, parent, false));
+
+            mTitleTextView = itemView.findViewById(R.id.event_title);
+            mDateTextView = itemView.findViewById(R.id.event_date);
+        }
+
+        public void bind(Event event){
+            mEvent = event;
+
+            mTitleTextView.setText(mEvent.getTitle());
+            mDateTextView.setText(mEvent.getDate().toString());
         }
     }
 
@@ -61,14 +78,13 @@ public class EventsFragment extends Fragment {
         public EventHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
 
-
-
             return new EventHolder(layoutInflater, parent);
         }
 
         @Override
         public void onBindViewHolder(EventHolder holder, int position) {
-
+            Event event = mEvents.get(position);
+            holder.bind(event);
         }
 
         @Override
