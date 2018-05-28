@@ -6,9 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.hanana.hananaapp.Database.HananaDatabaseSQlite;
 import org.hanana.hananaapp.exceptions.HananaException;
 
 public class SignIn1 extends AppCompatActivity {
+
+    HananaDatabaseSQlite HananaHelper = new HananaDatabaseSQlite(this);
 
     private String mName;
     private String mPassword;
