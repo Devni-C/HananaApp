@@ -8,7 +8,7 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".SignIn1"
+    tools:context=".SignInActivity"
     android:background="@drawable/image"
     >
 

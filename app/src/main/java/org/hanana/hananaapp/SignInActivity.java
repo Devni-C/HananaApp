@@ -3,13 +3,11 @@ package org.hanana.hananaapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import org.hanana.hananaapp.Database.HananaDatabaseSQlite;
 import org.hanana.hananaapp.exceptions.HananaException;
 
-public class SignIn1 extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
 
     HananaDatabaseSQlite HananaHelper = new HananaDatabaseSQlite(this);
 
@@ -50,7 +48,7 @@ public class SignIn1 extends AppCompatActivity {
         }
         else
         {
-            SignIn1 signinobj = new SignIn1();
+            SignInActivity signinobj = new SignInActivity();
             signinobj.setVisible(true);
 
         }
