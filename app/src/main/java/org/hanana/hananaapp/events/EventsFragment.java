@@ -1,4 +1,4 @@
-package org.hanana.hananaapp;
+package org.hanana.hananaapp.events;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.hanana.hananaapp.R;
 import org.hanana.hananaapp.models.Event;
 import org.hanana.hananaapp.models.EventsRepository;
 

@@ -1,8 +1,8 @@
-package org.hanana.hananaapp;
+package org.hanana.hananaapp.events;
 
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import org.hanana.hananaapp.SingleFragmentActivity;
 
 public class EventsActivity extends SingleFragmentActivity {
 
