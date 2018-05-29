@@ -1,18 +1,28 @@
 package org.hanana.hananaapp.models;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import org.hanana.hananaapp.database.HananaDB;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class EventsRepository {
+public class EventsRepository extends HananaDB{
 
     private ArrayList<Event> mEvents;
     public static EventsRepository sEventsRepository;
 
+    public EventsRepository(Context context) {
+        super(context);
+    }
+
     // constructor
 
-    // mehod to get a an EventsRepository
+    // method to get a an EventsRepository
     public static EventsRepository getInstance(Context context){
         if(sEventsRepository == null)
             sEventsRepository = new EventsRepository(context);
@@ -20,7 +30,7 @@ public class EventsRepository {
         return sEventsRepository;
     }
 
-    private EventsRepository(Context context) {
+    /*public EventsRepository(Context context) {
 
         mEvents = new ArrayList<>();
         for (int i = 0; i < 100 ; ++i){
@@ -33,10 +43,39 @@ public class EventsRepository {
             mEvents.add(event);
         }
 
-    }
+    }*/
 
     // method to get all events
     public ArrayList<Event> getAllEvents(){
         return mEvents;
+    }
+
+
+
+    public void insert(Event event) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+
+
+//        EventTimeStamper eventTimeStamper = new EventTimeStamper();
+//        DateFormat dateFormat = new SimpleDateFormat
+//                (eventTimeStamper.getDateTimeStampFormat());
+//        String date = dateFormat.format(event.getDate());
+
+        String insertQuery = "INSERT INTO " + TABLE_EVENT ;
+        insertQuery += " values( null, '" + event.getTitle();
+        insertQuery += "', '" + event.getVenue();
+        insertQuery += "', '" + event.getDate();
+//        insertQuery += "', '" + date;
+        insertQuery += "', '" + event.getTime();
+        insertQuery += "', '" + event.getLongitude();
+        insertQuery += "', '" + event.getLatitude();
+        insertQuery += "' )";
+
+        db.execSQL(insertQuery);
+        db.close();
+        Log.i("HANANA", event.getTitle() + " is added!");
+
+
     }
 }
