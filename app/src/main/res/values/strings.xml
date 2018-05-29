@@ -22,4 +22,20 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- Sign Up strings -->
+    <string name="username_label">Username</string>
+    <string name="username_hint">Enter username</string>
+    <string name="name_label">Name</string>
+    <string name="name_hint">Your name</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint">Your email</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="phone_hint">Your phone number</string>
+    <string name="password_label">Password</string>
+    <string name="password_hint">Your password</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="confirm_password_hint">Your password, again</string>
+    <string name="sign_up_button_label">Sign up</string>
+
 </resources>
