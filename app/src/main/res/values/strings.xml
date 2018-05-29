@@ -23,7 +23,7 @@
         completions."
     </string>
 
-    <!-- Sign Up strings -->
+    <!-- Strings related to sign up -->
     <string name="username_label">Username</string>
     <string name="username_hint">Enter username</string>
     <string name="name_label">Name</string>
@@ -38,4 +38,9 @@
     <string name="confirm_password_hint">Your password, again</string>
     <string name="sign_up_button_label">Sign up</string>
 
+    <!-- Strings related to profile -->
+    <string name="account_settings_label">Account Settings</string>
+    <string name="my_events_label">My Events</string>
+    <string name="my_favourites_label">My Favourites</string>
+    <string name="logout_label">Logout</string>
 </resources>
