@@ -1,36 +1,34 @@
 package org.hanana.hananaapp;
 
-import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.View;
-import android.widget.DatePicker;
+import android.widget.TimePicker;
 
 import org.hanana.hananaapp.models.TimeStamper;
 import org.hanana.hananaapp.models.ViewUpdater;
-
+import android.text.format.DateFormat;
 import java.util.Calendar;
 
-public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
     TimeStamper timeStamper;
     ViewUpdater viewUpdater;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
 
-        DatePickerDialog dialog = new DatePickerDialog(getActivity(), this, year, month, day);
+        TimePickerDialog dialog = new TimePickerDialog(getActivity(), this, hour, minute, DateFormat.is24HourFormat(getActivity()));
 
         return dialog;
     }
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int day) {
-        timeStamper.setDate(day, month,year);
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute){
+        timeStamper.setTime(minute, hourOfDay);
         viewUpdater.updateView();
     }
 
