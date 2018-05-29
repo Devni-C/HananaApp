@@ -3,11 +3,11 @@ package org.hanana.hananaapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import org.hanana.hananaapp.Database.HananaDatabaseSQlite;
+import org.hanana.hananaapp.database.HananaDB;
 
 public class MainActivity extends AppCompatActivity {
 
-    HananaDatabaseSQlite helper = new HananaDatabaseSQlite(this);
+    HananaDB helper = new HananaDB(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
