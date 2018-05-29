@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TimePicker;
 
-import org.hanana.hananaapp.models.TimeStamper;
+/*import org.hanana.hananaapp.models.TimeStamper;
 import org.hanana.hananaapp.models.ViewUpdater;
 import android.text.format.DateFormat;
 import java.util.Calendar;
@@ -40,4 +40,4 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         viewUpdater = updater;
     }
 
-}
+}*/

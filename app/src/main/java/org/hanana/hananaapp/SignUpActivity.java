@@ -1,6 +1,8 @@
 package org.hanana.hananaapp;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,6 +50,11 @@ public class SignUpActivity extends Activity {
         });
     }
 
+    private void signInUser() {
+        Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+        startActivity(intent);
+    }
+
     // Helper to sign up the user
     private void signUpUser() {
         String username = getText(mUsernameEditText);
@@ -59,23 +66,25 @@ public class SignUpActivity extends Activity {
 
         try{
             // check if password and confirmation matches
-            if(isPasswordConfirmed(password, confirmPassword)){
-                // create user
-                User user = new User(0, username,password);
-                // set other attributes
-                user.setName(name);
-                user.setEmail(email);
-                user.setMobileNumber(phoneNumber);
-
-                // add the user to the database
-                mUserRepository.insertUser(user);
-
-
-            }else{
+            if(!isPasswordConfirmed(password, confirmPassword)){
                 throw new HananaException("Password is not confirmed.");
             }
+            // create user
+            User user = new User(0, username,password);
+            // set other attributes
+            user.setName(name);
+            user.setEmail(email);
+            user.setMobileNumber(phoneNumber);
+
+            // add the user to the database
+            mUserRepository.insertUser(user);
+
+            // go to the sign in page
+            signInUser();
         }catch (HananaException ex){
             Log.i("HANANA", ex.getErrorMessage());
+            // ex
+            mUsernameEditText.setBackgroundColor(Color.RED);
 
         }
     }
