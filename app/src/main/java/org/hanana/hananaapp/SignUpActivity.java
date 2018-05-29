@@ -7,13 +7,35 @@ import android.view.View;
 import android.widget.EditText;
 
 public class SignUpActivity extends AppCompatActivity {
-
+    private String uName;
+    private String uPassword;
+    private String uConfirmPassword;
+    private String uEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
     }
+
+    public void setuName(){
+        uName = findViewById(R.id.signUpUNameEditText).toString();
+    }
+
+    public void setuPassword(){
+        uPassword = findViewById(R.id.signUpPasswordEditText).toString();
+    }
+
+
+    public void uConfirmPassword(){ uConfirmPassword = findViewById(R.id.signUpConfirmPasswordEditText).toString();}
+
+
+    public void setuEmail(){
+        uEmail = findViewById(R.id.emailEditText).toString();
+    }
+
+
+
 
     public void onButtonClick(View v)
     {
