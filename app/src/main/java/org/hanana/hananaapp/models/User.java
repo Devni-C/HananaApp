@@ -1,5 +1,7 @@
 package org.hanana.hananaapp.models;
 
+import org.hanana.hananaapp.exceptions.HananaException;
+
 public class User {
     // isntance variables
     private long mId;
@@ -10,9 +12,11 @@ public class User {
     private String mMobileNumber;
 
     // constructor
-    public User(long id, String username) {
+
+    public User(long id, String username, String password) throws HananaException {
         mId = id;
-        mUsername = username;
+        setUsername(username);
+        setPassword(password);
     }
 
     public long getId() {
@@ -23,11 +27,21 @@ public class User {
         return mUsername;
     }
 
+    private void setUsername(String username) throws HananaException {
+        if(isNullOrEmpty(username) || username.length() <8 )
+            throw new HananaException("Minimum username length is 8.");
+        mUsername = username;
+    }
+
     public String getPassword() {
         return mPassword;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) throws HananaException {
+
+        if(password.length() < 8)
+            throw new HananaException("Minimum password length is 8.");
+
         mPassword = password;
     }
 
@@ -35,7 +49,9 @@ public class User {
         return mName;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws HananaException {
+        if(isNullOrEmpty(name))
+            throw new HananaException("Name can not be empty");
         mName = name;
     }
 
@@ -43,7 +59,9 @@ public class User {
         return mEmail;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws HananaException {
+        if(isNullOrEmpty(email))
+            throw new HananaException("Email can not be empty.");
         mEmail = email;
     }
 
@@ -51,7 +69,15 @@ public class User {
         return mMobileNumber;
     }
 
-    public void setMobileNumber(String mobileNumber) {
+    public void setMobileNumber(String mobileNumber) throws HananaException {
+        if(isNullOrEmpty(mobileNumber))
+            throw  new HananaException("Phone number can not be empty.");
         mMobileNumber = mobileNumber;
+    }
+
+    // helper methods
+    // helper to check if an attribute is empty or null
+    private boolean isNullOrEmpty(String str){
+        return str == null || str.isEmpty();
     }
 }
