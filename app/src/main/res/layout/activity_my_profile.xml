@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyProfileActivity">
+
+    <!-- Account settings -->
+    <Button
+        android:id="@+id/account_settings_btn"
+        android:text="@string/account_settings_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- My Events -->
+    <Button
+        android:id="@+id/my_events_btn"
+        android:text="@string/my_events_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- My Favourites -->
+    <Button
+        android:id="@+id/my_favourites_btn"
+        android:text="@string/my_favourites_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:text="@string/logout_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
