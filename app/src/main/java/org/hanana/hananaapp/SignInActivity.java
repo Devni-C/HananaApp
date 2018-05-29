@@ -27,7 +27,7 @@ public class SignInActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.signInPasswordEditText).toString();
     }
 
-    private void onButtonClick(View view) throws HananaException {
+    public void onButtonClick(View view) throws HananaException {
 
            setmName();
            setmPassword();
@@ -54,6 +54,10 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
+    public void onButtonClick1(View view) {
+        SignUp1Activity signUpAct = new SignUp1Activity();
+        signUpAct.setVisible(true);
+    }
 }
 
 

@@ -13,7 +13,7 @@
     >
 
     <LinearLayout
-        android:paddingTop="100dp"
+        android:paddingTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -51,6 +51,18 @@
             android:layout_height="60dp"
             android:onClick="onButtonClick"
            />
+
+        <Button
+            android:id="@+id/signUpUIButton"
+            android:textColor="#fff"
+            android:background="@drawable/selectbuttondesign"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:text="Login"
+            android:layout_height="60dp"
+            android:onClick="onButtonClick1"
+            />
+
      </LinearLayout>
 
 

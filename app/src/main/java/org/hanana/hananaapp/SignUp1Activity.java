@@ -2,6 +2,7 @@ package org.hanana.hananaapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,20 +22,18 @@ public class SignUp1Activity extends AppCompatActivity {
 
     public void onSignUpClick(View v){
 
-        //User us = new User();
-        //us.getId();
 
-        if (v.getId == R.id.BsignUpButton)
+        if (v.getId() == R.id.signUpButton)
         {
-            EditText username = (EditText)findViewById(R.id.username);
-            EditText email = (EditText)findViewById(R.id.email);
-            EditText phonenumber = (EditText)findViewById(R.id.phonenumber);
-            EditText password = (EditText)findViewById(R.id.password);
-            EditText ConfirmPassword = (EditText)findViewById(R.id.ConfirmPassword);
+            EditText username = (EditText)findViewById(R.id.signUpUNameEditText);
+            EditText email = (EditText)findViewById(R.id.emailEditText);
+            //EditText phonenumber = (EditText)findViewById(R.id.phonenumber);
+            EditText password = (EditText)findViewById(R.id.signUpPasswordEditText);
+            EditText ConfirmPassword = (EditText)findViewById(R.id.signUpConfirmPasswordEditText);
 
             String usernamestr = username.getText().toString();
             String emailstr = email.getText().toString();
-            String phonenumberstr = phonenumber.getText().toString();
+            //String phonenumberstr = phonenumber.getText().toString();
             String passwordstr = password.getText().toString();
             String ConfirmPasswordstr = ConfirmPassword.getText().toString();
 
@@ -48,7 +47,7 @@ public class SignUp1Activity extends AppCompatActivity {
                User u = new User();
                u.setUsername(usernamestr);
                u.setEmail(emailstr);
-               u.setPhonenumber(phonenumberstr);
+              // u.setPhonenumber(phonenumberstr);
                u.setPassword(passwordstr);
 
 
