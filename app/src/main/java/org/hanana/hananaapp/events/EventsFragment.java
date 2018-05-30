@@ -5,12 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.hanana.hananaapp.R;
+import org.hanana.hananaapp.exceptions.HananaException;
 import org.hanana.hananaapp.models.Event;
 import org.hanana.hananaapp.models.EventsRepository;
 
@@ -37,8 +39,13 @@ public class EventsFragment extends Fragment {
     }
 
     private void updateUI(){
-        EventsRepository repository = EventsRepository.getInstance(getActivity());
-        List <Event> events = repository.getAllEvents();
+       EventsRepository repository = new EventsRepository(getContext());
+        List <Event> events = null;
+        try {
+            events = repository.getAllEvents();
+        } catch (HananaException e) {
+            Log.i("HANANA", e.getErrorMessage());
+        }
 
         mAdapter = new EventAdapter(events);
         mEventsRecyclerView.setAdapter(mAdapter);
