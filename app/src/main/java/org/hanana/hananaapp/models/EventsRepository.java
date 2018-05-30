@@ -1,10 +1,12 @@
 package org.hanana.hananaapp.models;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import org.hanana.hananaapp.database.HananaDB;
+import org.hanana.hananaapp.exceptions.HananaException;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,41 +15,38 @@ import java.util.Date;
 
 public class EventsRepository extends HananaDB{
 
-    private ArrayList<Event> mEvents;
-    public static EventsRepository sEventsRepository;
-
     public EventsRepository(Context context) {
         super(context);
     }
 
-    // constructor
+    public ArrayList<Event> getAllEvents() throws HananaException{
 
-    // method to get a an EventsRepository
-    public static EventsRepository getInstance(Context context){
-        if(sEventsRepository == null)
-            sEventsRepository = new EventsRepository(context);
+        String selectQuery = "SELECT * FROM " + TABLE_EVENT;
 
-        return sEventsRepository;
-    }
+        SQLiteDatabase database = getReadableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
 
-    /*public EventsRepository(Context context) {
+        // ArrayList of event objects
+        ArrayList<Event> events = null;
 
-        mEvents = new ArrayList<>();
-        for (int i = 0; i < 100 ; ++i){
-            Event event = new Event(i,i);
-            event.setTitle("Event " + i);
+        while(cursor.moveToNext()){
+            if(events == null)
+                events = new ArrayList<>();
+
+            Event event = new Event(cursor.getInt(0),cursor.getInt(1));
+            event.setTitle(cursor.getString(2));
+            event.setLongitude(cursor.getFloat(3));
+            event.setLatitude(cursor.getFloat(4));
+            // TODO: convert string to date
             event.setDate(new Date());
-            event.setLatitude(0.0f);
-            event.setLongitude(0.0f);
-            event.setVenue("Venue " + i);
-            mEvents.add(event);
+            event.setVenue(cursor.getString(6));
+
+            events.add(event);
+
         }
-
-    }*/
-
-    // method to get all events
-    public ArrayList<Event> getAllEvents(){
-        return mEvents;
+        if(events == null)
+            throw new HananaException("No events are found.");
+        return events;
     }
 
 
@@ -67,7 +66,7 @@ public class EventsRepository extends HananaDB{
         insertQuery += "', '" + event.getVenue();
         insertQuery += "', '" + event.getDate();
 //        insertQuery += "', '" + date;
-        insertQuery += "', '" + event.getTime();
+       // insertQuery += "', '" + event.getTime();
         insertQuery += "', '" + event.getLongitude();
         insertQuery += "', '" + event.getLatitude();
         insertQuery += "' )";
