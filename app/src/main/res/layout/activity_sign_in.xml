@@ -14,7 +14,8 @@
     <EditText
         android:id="@+id/sign_in_username_edit_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +23,19 @@
         />
     <EditText
         android:id="@+id/sign_in_password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/sign_in_btn"
+        android:text="@string/sign_in_button_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/hanana_sign_up_btn"
+        android:text="@string/hanana_sign_up_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

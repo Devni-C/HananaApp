@@ -44,4 +44,7 @@
     <string name="my_favourites_label">My Favourites</string>
     <string name="logout_label">Logout</string>
     <string name="my_profile_activity">My Profile Activity</string>
+    <string name="hanana_sign_up_label">Sign up to Hanana</string>
+    <string name="sign_in_button_label">Sign In</string>
+
 </resources>
