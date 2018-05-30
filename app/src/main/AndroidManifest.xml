@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity"
+        <activity
+            android:name=".SignUpActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".events.EventsActivity">
-        </activity>
+        <activity android:name=".events.EventsActivity" />
         <activity android:name=".MainActivity" />
-
+        <activity android:name=".AccountSettingsActivity" />
+        <activity android:name=".MyEventsActivity" />
+        <activity android:name=".MyFavouritesActivity"></activity>
     </application>
 
 </manifest>
