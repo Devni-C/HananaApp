@@ -30,7 +30,7 @@ public class MyProfileActivity extends AppCompatActivity {
 
     public void LogoutOnClick(View view){
 
-       // Logout();
+        Logout();
     }
 
 
@@ -56,8 +56,8 @@ public class MyProfileActivity extends AppCompatActivity {
         myfavouritesactivity.setVisible(true);
     }
 
-   /* private void Logout(){
+    private void Logout(){
         SignInActivity signinactivity = new SignInActivity();
         signinactivity.setVisible(true);
-    }*/
+    }
 }
