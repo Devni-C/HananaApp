@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:text="Login"
             android:layout_height="60dp"
-            android:onClick="onButtonClick"
+
            />
 
         <Button

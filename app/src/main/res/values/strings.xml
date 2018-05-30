@@ -43,4 +43,5 @@
     <string name="my_events_label">My Events</string>
     <string name="my_favourites_label">My Favourites</string>
     <string name="logout_label">Logout</string>
+    <string name="my_profile_activity">My Profile Activity</string>
 </resources>
