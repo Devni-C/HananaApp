@@ -11,6 +11,7 @@ public class Event {
     private Date mDate;
     private String mVenue;
 
+
     public Event(long id, long userId) {
         mId = id;
         mUserId = userId;
