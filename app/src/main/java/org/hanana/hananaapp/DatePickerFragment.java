@@ -7,7 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.DatePicker;
 
-/*import org.hanana.hananaapp.models.TimeStamper;
+import org.hanana.hananaapp.models.TimeStamper;
 import org.hanana.hananaapp.models.ViewUpdater;
 
 import java.util.Calendar;
@@ -42,4 +42,4 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         viewUpdater = updater;
     }
 
-}*/
+}
