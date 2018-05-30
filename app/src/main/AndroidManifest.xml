@@ -27,7 +27,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".AccountSettingsActivity" />
         <activity android:name=".MyEventsActivity" />
-        <activity android:name=".MyFavouritesActivity"></activity>
+        <activity android:name=".MyFavouritesActivity" />
     </application>
 
 </manifest>
