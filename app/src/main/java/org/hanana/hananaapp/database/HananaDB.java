@@ -20,6 +20,17 @@ public class HananaDB extends SQLiteOpenHelper {
     protected static final String U_EMAIL = "email";
     protected static final String U_PHONE_NUMBER = "phonenumber";
 
+    //event schema
+    protected static final String TABLE_EVENT = "event";
+    protected static final String E_ID = "id";
+    protected static final String E_EVENT_TITLE = "eventname";
+    protected static final String E_VENUE = "venue";
+    protected static final String E_DATE = "date";
+    protected static final String E_TIME = "time";
+    protected static final String E_LONGITUDE = "longitude";
+    protected static final String E_LATITUDE = "latitude";
+
+
     public HananaDB(Context context){
         super(context, DATABASE_NAME , null , DATABASE_VERSION);
     }
@@ -34,12 +45,21 @@ public class HananaDB extends SQLiteOpenHelper {
 
         // creating the tables
         sqLiteDatabase.execSQL(createUserTable);
+
+        // Forming the create event table query
+        String createEventTable = "create table " + TABLE_EVENT + "( " + E_ID;
+        createEventTable += " integer primary key autoincrement, " + E_EVENT_TITLE;
+        createEventTable += " text, " + E_VENUE + " text, " + E_DATE + " text, ";
+        createEventTable += E_TIME + " text, " + E_LATITUDE + " text," + E_LONGITUDE + "text )";
+
+        // creating the tables
+        sqLiteDatabase.execSQL(createEventTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // dropping the tables
-        db.execSQL("drop table if exists " + TABLE_USER);
+        db.execSQL("drop table if exists " + TABLE_USER + TABLE_EVENT);
         // re-creating the tables
         onCreate(db);
     }
